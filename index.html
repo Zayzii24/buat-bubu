@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cerita Baba & Bubu ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.25);
+  text-align: center;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 14px;
+}
+
+/* SECTION */
+section {
+  min-height: 100vh;
+  padding: 80px 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border-radius: 25px;
+  max-width: 650px;
+  animation: fadeUp 1.5s ease;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* BUTTON */
+button {
+  margin-top: 15px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  background: #ff5e78;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #ff2e63;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TIMELINE */
+.timeline {
+  text-align: left;
+  margin-top: 25px;
+}
+
+.timeline div {
+  margin: 18px 0;
+  padding-left: 15px;
+  border-left: 3px solid #fff;
+}
+
+/* HEART FALL */
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#awal">Awal</a>
+  <a href="#cerita">Cerita</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#game">Game</a>
+  <a href="#akhir">Akhir</a>
+</nav>
+
+<!-- AWAL -->
+<section id="awal">
+  <div class="card">
+    <h1>Hai Bubu ❤️</h1>
+    <p>
+      Website ini baba buat pelan-pelan,  
+      sama seperti perasaan baba ke bubu.  
+      Jangan buru-buru bacanya ya 😊
+    </p>
+    <button onclick="document.getElementById('cerita').scrollIntoView()">
+      Mulai Cerita 💕
+    </button>
+  </div>
+</section>
+
+<!-- CERITA -->
+<section id="cerita">
+  <div class="card">
+    <h2>Cerita Tentang Baba & Bubu 🥰</h2>
+    <p>
+      Dari yang awalnya cuma ngobrol biasa,  
+      lalu jadi saling cerita,  
+      sampai akhirnya baba sadar…
+    </p>
+    <p>
+      Bubu bukan sekadar singgah,  
+      bubu adalah rumah baba 🤍
+    </p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="card">
+    <h2>Bagan Perjalanan Baba & Bubu 💞</h2>
+    <div class="timeline">
+      <div>📍 Kenal → Deg-degan</div>
+      <div>💬 Chat → Nyaman</div>
+      <div>😊 Ketawa → Bahagia</div>
+      <div>🤍 Bertengkar → Bertahan</div>
+      <div>💍 Masa depan → Bareng bubu</div>
+    </div>
+  </div>
+</section>
+
+<!-- GAME -->
+<section id="game">
+  <div class="card">
+    <h2>Mini Game 💘</h2>
+    <p>
+      Kalau suatu hari baba lagi sedih,  
+      apa yang akan bubu lakukan?
+    </p>
+
+    <button onclick="jawab('A')">😴 Diemin dulu</button><br><br>
+    <button onclick="jawab('B')">💬 Nanyain pelan-pelan</button><br><br>
+    <button onclick="jawab('C')">🤍 Peluk & temenin</button>
+
+    <p id="hasil" style="margin-top:25px;font-size:18px;"></p>
+  </div>
+</section>
+
+<!-- AKHIR -->
+<section id="akhir">
+  <div class="card">
+    <h2>Satu Hal Terakhir 💖</h2>
+    <p>
+      Baba nggak janji hidup selalu mudah,  
+      tapi baba janji bertahan bareng bubu.
+    </p>
+    <p>
+      Terima kasih sudah jadi bagian terpenting dalam hidup baba 🤍
+    </p>
+    <button onclick="alert('Baba sayang bubu selamanya 😘')">
+      Klik Kalau Bubu Tersenyum
+    </button>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5b0c9c2d7a.mp3">
+</audio>
+
+<!-- SCRIPT -->
+<script>
+function jawab(pilihan) {
+  const hasil = document.getElementById("hasil");
+
+  if (pilihan === "A") {
+    hasil.innerHTML = "😆 Jujur banget… tapi baba masih berharap bubu nyamperin.";
+  } else if (pilihan === "B") {
+    hasil.innerHTML = "🥰 Cara bubu peduli itu bikin baba tenang.";
+  } else {
+    hasil.innerHTML = "💍 Baba nggak ragu… bubu adalah orang yang baba pilih ❤️";
+  }
+}
+
+/* HEART FALL */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}, 300);
+</script>
+
+</body>
+</html>
